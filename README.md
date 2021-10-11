@@ -33,3 +33,12 @@ console.log('Hello')
 
 ```js
 It gave me a problem, when it was fixed it did this thing
+
+
+
+#### Example Table
+
+| Column 1 | Column 2|
+|----------|---------|
+|thing1    |thing2   |
+|vader     |anakin   |
