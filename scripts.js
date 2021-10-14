@@ -12,15 +12,16 @@
 const state = {
     player1: 0,
     player2: 0,
-    currentQuestion: {}
+    currentQuestion: {}, 
+    which: true,
 }
 
-let question = []
+let questions = []
 ////////////////////////////////
 //         DOM ELEMENT       //
 ///////////////////////////////
 
-const $question = $('#question')
+const $question = $('#Question')
 const $a = $('#a')
 const $b = $('#b')
 const $c = $('#c')
@@ -35,10 +36,25 @@ console.log(p1Score, p2Score)
 /////////////////////////////////
 // FUNCTIONS
 //////////////////////////////
+const chooseAnswer = (event , question)=> {
+    console.log(event)
+    if(event.target.innerText === question.answer){
+        console.log('Correct')
+        if (state.which){
+            state.player1++
+            state.which = !state.which
+        }
+    } else {
+        state.player2++
+        state.which = !state.which
+    }
+    setBoard(questions)
+} 
+
 
 
 const setBoard = (q) => { 
-    const randomIndex = Math.floor(Math.random($) * q.length)
+    const randomIndex = Math.floor(Math.random() * q.length)
     const randomQuestion = q[randomIndex]
 
     $question.text(randomQuestion.question)
@@ -46,11 +62,14 @@ const setBoard = (q) => {
     $b.text(randomQuestion.b)
     $c.text(randomQuestion.c)
     $d.text(randomQuestion.d)
+    p1Score.text(state.player1)
+    p2Score.text(state.player2)
 
-    p1Score.text()=state.player1
-    p2Score.text()=state.player2
-
-    
+    $('li').off
+    $('li').on('click', (event) => {
+        chooseAnswer(event, randomQuestion)
+        console.log(chooseAnswer)
+    })
 }
 
 
@@ -59,9 +78,9 @@ const URL = "https://cdn.contentful.com/spaces/gdbvn69ne4jw/environments/project
 $.ajax(URL)
 .then((data)=> {
     
-   question = data.items.map((q) =>  q.fields)
+   questions = data.items.map((q) =>  q.fields)
    console.log(data)
-   console.log(question)
+   console.log(questions)
 
-   setBoard(question)
+   setBoard(questions)
 })

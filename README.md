@@ -20,25 +20,18 @@
 
 ## Challenges
 
-```js
-My code did this thing... etc
-```
 
+/////////////////////////////////////
+///   DAY 1                       //
+///////////////////////////////////
+Past 24: HTML/CSS/jQuery wired up, API is connected, Page styling and layout is 75% complete, Game State is 90% complete.
 
-```js
-console.log('Hello')
+Had some hiccups connecting the API,  and will need to fix an issue where answers are populating but not the questions.
 
+/////////////////////////////////
+//          DAY 2             //
+///////////////////////////////
 
-
-
-```js
-It gave me a problem, when it was fixed it did this thing
-
-
-
-#### Example Table
-
-| Column 1 | Column 2|
-|----------|---------|
-|thing1    |thing2   |
-|vader     |anakin   |
+Game Logic nearly complete, had an issue where the the answers werent responding. FIxed.
+Drawn out plan for styling (not pictured)
+On track to complete by EOD tomorrow. 
