@@ -1,14 +1,10 @@
-@mediaquery {
-    
-IMO these are the best breakpoints:
-
-@media (min-width:320px)  { /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */ }
-@media (min-width:480px)  { /* smartphones, Android phones, landscape iPhone */ }
-@media (min-width:600px)  { /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */ }
-@media (min-width:801px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ }
+@media (min-width:320px)  { /* smartphones, iPhone, portrait 480x320 phones */ }
+@media (min-width:481px)  { /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */ }
+@media (min-width:641px)  { /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */ }
+@media (min-width:961px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ }
 @media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ }
-@media (min-width:1281px)
-}
+@media (min-width:1281px) { /* hi-res laptops and desktops */ }
+
 
 /* ^ Thanks Stack Overflow ^/*
 
@@ -17,14 +13,22 @@ IMO these are the best breakpoints:
 **   HEADING
 ************************************ */
 
-h1 {
-    
+.header {
     text-align: center;
-    
     font-family: monospace;
-    
-    
+
+  
  
+}
+
+#heading {
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+
 }
 /* ************************************
 **              BODY
@@ -34,23 +38,37 @@ h1 {
 
 
 
-.img {
-    content:url(https://wallpaperaccess.com/full/1892364.jpg);
-    opacity: -1;
-    z-index: -1;
+img {
+   z-index: -1;
     position: absolute;
 }
 
-
+#container {
+    display: flex;
+    flex-direction: row;
+    gap: 1fr;
+}
 
 
 /* ************************************
 **   QUESTIONS
 ************************************ */
+#trivia {
+    display: flex;
+    flex-direction: column;
+    margin-right: 200px;
+    /* width: 50%; */
+    /* align-items: left;
+    align-content: left;  */
+    /* grid-template-columns: 1fr 1fr; */
+}
+
+
+
 
 #Question {
-    position: relative;
-    width: 70%;
+    align-items: left;
+    width: 40%;
     padding: 30px;
     text-align:center;
     font-family: monospace;
@@ -59,7 +77,7 @@ h1 {
     font-size: 28px;
     margin: 10px auto;
     border-radius: 5px;
-    position: relative;
+    justify-content: left;
 }
 
 
@@ -69,7 +87,7 @@ h1 {
 
 
 #answer {
-    width: 75%;
+    width: 40%;
     text-align: center;
     font-family:  monospace;
     margin: 10px auto;
@@ -107,9 +125,10 @@ h1 {
 #Scores {
     display: flex;
     flex-direction: row;
-    text-align: center;
+    gap: 100px;
+    /* text-align: center;
     justify-content: center;
-    margin: 10px auto black;
+    margin: 10px auto black; */
 
 }
 
@@ -120,19 +139,20 @@ h1 {
     text-align: center;
     background-color: peachpuff;
     margin: 20px auto black;
+    font-family: monospace;
     
    
 }
 
 h3 {
-
+    align-items: left;
     display: flex;
     flex-direction: row;
-    width:100%;
+    font-size: xx-large;
     height: fit-content;
     text-align: center;
     background-color: grey;
     margin:  auto black;
-    font-display: ;
+    font-family: monospace;
     
 }

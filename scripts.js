@@ -1,8 +1,4 @@
-//const URL = "https://cdn.contentful.com/spaces/gdbvn69ne4jw/environments/project_1-2021-10-12/entries?access_token=EIIsT4Udy9I7PF134kMk-gqIJMMRhQxb8bu2v37RKYM&content_type=triviaQue"
-//$.ajax(URL)
-//.then((data)=> {
-  //  console.log(data)
-//})
+
 
 
 ////////////////////////////////
@@ -43,15 +39,17 @@ const chooseAnswer = (event , question)=> {
         if (state.which){
             state.player1++
             state.which = !state.which
-        }
-    } else {
+        } else {
+         console.log('incorrect')
         state.player2++
         state.which = !state.which
     }
     setBoard(questions)
-} 
-
-
+}else {
+   setBoard(questions)
+    state.which =!state.which
+}
+}
 
 const setBoard = (q) => { 
     const randomIndex = Math.floor(Math.random() * q.length)
@@ -65,7 +63,7 @@ const setBoard = (q) => {
     p1Score.text(state.player1)
     p2Score.text(state.player2)
 
-    $('li').off
+    $('li').off()
     $('li').on('click', (event) => {
         chooseAnswer(event, randomQuestion)
         console.log(chooseAnswer)
