@@ -23,8 +23,8 @@ const $b = $('#b')
 const $c = $('#c')
 const $d = $('#d')
 
-const p1Score = $('#player1 h4')
-const p2Score = $('#player2 h4')
+const p1Score = $('#Player1 h4')
+const p2Score = $('#Player2 h4')
 
 console.log(p1Score, p2Score)
 
